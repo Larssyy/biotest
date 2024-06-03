@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Larsy's Bio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+	html, body {
+	  height: 100%;
+	  margin: 0;
+	  scroll-behavior: smooth;
+	}
+	.scroll-page {
+	  height: 100vh;
+	}
+	.scroll-down {
+	  animation: scrollDown 1s ease-in-out 1s forwards;
+	}
+	@keyframes scrollDown {
+	  0% { transform: translateY(0); }
+	  100% { transform: translateY(-100vh); }
+	}
+  </style>
+</head>
+<body>
+  <audio id="background-audio" src="music.mp3" autoplay></audio>
+
+  <!-- First Page -->
+  <div id="page-1" class="flex flex-col items-center justify-center scroll-page bg-white">
+	<img src="https://cdn.larsylab.org/Images/IMG_7335.jpeg" alt="Larsy" class="mb-8 rounded-full w-1/3 h-1/3 object-cover">
+	<h1 class="text-5xl font-bold">Larsyジ</h1>
+  </div>
+
+  <!-- Second Page -->
+  <div id="page-2" class="flex flex-col items-center justify-center scroll-page bg-gray-100">
+	<div class="flex space-x-8">
+	  <div class="text-center">
+		<img src="icons/html.svg" alt="HTML Icon" class="w-16 h-16 mx-auto mb-2">
+		<p class="text-xl">HTML</p>
+	  </div>
+	  <div class="text-center">
+		<img src="icons/css.svg" alt="CSS Icon" class="w-16 h-16 mx-auto mb-2">
+		<p class="text-xl">CSS</p>
+	  </div>
+	  <div class="text-center">
+		<img src="icons/js.svg" alt="JavaScript Icon" class="w-16 h-16 mx-auto mb-2">
+		<p class="text-xl">JavaScript</p>
+	  </div>
+	  <div class="text-center">
+		<img src="icons/python.svg" alt="Python Icon" class="w-16 h-16 mx-auto mb-2">
+		<p class="text-xl">Python</p>
+	  </div>
+	</div>
+  </div>
+
+  <script>
+	window.onload = function() {
+	  document.getElementById('background-audio').play();
+	  setTimeout(() => {
+		document.getElementById('page-1').classList.add('scroll-down');
+	  }, 3000);
+	}
+  </script>
+</body>
+</html>
